@@ -1,23 +1,12 @@
 #header {
-  margin: auto;
-  width: 50%;
-  border: 5px solid #B22222;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  color: red;
-  background-color: black;
+    height: 30px;
 }
-
+#footer {
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+}
 body {
-  background-color: #87CEFA;
-  padding-top: .5cm;
-}
-
-.main {
-  font-family: sans-serif;
-  padding: 10px 15px 10px 15px;
-  border: 2px solid #FFF5EE;
-  border-radius: 10px;
-  margin: 0px 15px 0px 15px;
+    height: 100%;
+    margin-bottom: 30px;
 }
