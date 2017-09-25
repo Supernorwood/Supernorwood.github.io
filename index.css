@@ -1,11 +1,7 @@
 #header {
-    height: 30px;
+    height: 60px;
 }
-#footer {
-    height: 30px;
-    position: absolute;
-    bottom: 0;
-}
+
 body {
     height: 100%;
     margin-bottom: 30px;
