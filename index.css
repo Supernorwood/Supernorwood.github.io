@@ -1,4 +1,7 @@
-
 body {
   background-color: lightblue;
+}
+header {
+  height: 30px;
+  background-color: red;
 }
