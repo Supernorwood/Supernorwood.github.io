@@ -38,18 +38,18 @@ section{padding:75px 0;border-top:1px solid var(--line)}.section-top{display:fle
 <div class="hero">
 <div>
 <div class="eyebrow">Support engineering · APIs · AI automation</div>
-<h1>I debug the systems <em>behind the experience.</em></h1>
-<p class="lede">I'm Gregory Norwood, an enterprise support engineer and Java developer. I troubleshoot complex platform and integration failures—and build AI-assisted automation with the same focus on root cause, reliability, and measurable behavior.</p>
+<h1>Complex systems. <em>No guesswork.</em></h1>
+<p class="lede">Enterprise support engineer and Java developer specializing in root-cause analysis, APIs, integrations, and AI-assisted automation. I investigate failures at the system level, build reliable workflows, and turn difficult technical problems into clear, actionable solutions.</p>
 <div class="actions"><a class="button primary" href="#work">Explore my work ↗</a><a class="button secondary" href="https://github.com/Supernorwood" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a><a class="button secondary" href="#contact">Get in touch</a></div>
 </div>
 <div class="terminal" aria-label="Illustrative troubleshooting workflow">
 <div class="term-head"><i class="circle"></i><i class="circle"></i><i class="circle"></i><span>incident-triage / example</span></div>
 <pre><span class="term-blue">$</span> inspect pipeline
-<span class="term-green">✓</span> ingest job sources
+<span class="term-green">✓</span> ingest source records
 <span class="term-green">✓</span> deduplicate records
-<span class="term-amber">!</span> remote eligibility ambiguous
-<span class="term-blue">→</span> inspect residency rules
-<span class="term-blue">→</span> separate location from hours
+<span class="term-amber">!</span> classification ambiguous
+<span class="term-blue">→</span> inspect decision rules
+<span class="term-blue">→</span> isolate conflicting criteria
 <span class="term-green">✓</span> add regression coverage
 <span class="term-blue">$</span> verify result
 <span class="term-green">✓</span> label: VERIFY, not CONFIRMED</pre>
@@ -60,12 +60,12 @@ section{padding:75px 0;border-top:1px solid var(--line)}.section-top{display:fle
 <div class="feature">
 <div>
 <span class="tag">Active project · AI-assisted engineering</span>
-<h3>AI-assisted job discovery &amp; evaluation pipeline</h3>
-<p>A personal automation project developed with Claude Code and Python. It searches multiple job-source lanes, deduplicates postings, applies eligibility rules, scores leads, and prepares structured shortlists for human review.</p>
-<p>The most valuable work has been troubleshooting the workflow: misleading remote classifications, inaccessible job boards, inconsistent state, document verification, and agent-generated claims that needed stronger grounding.</p>
+<h3>AI-assisted research &amp; evaluation pipeline</h3>
+<p>A personal AI-assisted automation project developed with Claude Code and Python. It collects information from multiple public sources, deduplicates records, applies rule-based classifications, evaluates results, and produces structured outputs for human review.</p>
+<p>The engineering work centers on reliability: ambiguous classifications, source-access failures, inconsistent state, document verification, and AI-generated claims that require stronger grounding.</p>
 <a class="button secondary" href="#debugging">Read the debugging cases ↗</a>
 </div>
-<div class="flow"><b>Pipeline overview</b><br>source discovery<br>↓<br>deduplication &amp; state<br>↓<br>eligibility / scoring<br>↓<br>human-reviewed shortlist<br><br><span style="color:#a4b7cb">Python · Claude Code · Git · tests</span></div>
+<div class="flow"><b>Pipeline overview</b><br>source discovery<br>↓<br>deduplication &amp; state<br>↓<br>rules / evaluation<br>↓<br>human-reviewed output<br><br><span style="color:#a4b7cb">Python · Claude Code · Git · tests</span></div>
 </div>
 <div class="grid">
 <div class="card"><span class="tag planned">Planned lab</span><h3>RAG failure analysis</h3><p>Build a small retrieval pipeline, deliberately seed stale or missing context, and trace whether failures come from retrieval or generation.</p></div>
@@ -75,14 +75,14 @@ section{padding:75px 0;border-top:1px solid var(--line)}.section-top{display:fle
 </div>
 </section>
 <section id="debugging">
-<div class="section-top"><div><div class="kicker">02 / Troubleshooting journal</div><h2>What went wrong—and what changed.</h2></div><p class="intro">Concrete incidents from the job-search project. These are workflow and automation reliability cases, not claims of production LLM platform ownership.</p></div>
+<div class="section-top"><div><div class="kicker">02 / Troubleshooting journal</div><h2>Root causes. Not surface fixes.</h2></div><p class="intro">Selected engineering investigations from a personal AI-assisted automation system. Each example highlights a failure mode, the corrective approach, and the reliability principle behind it.</p></div>
 <div class="grid">
-<div class="card"><span class="tag muted">Classification / logic</span><h3>Location ≠ time-zone coverage</h3><p><strong>Failure:</strong> A job requiring candidates in particular time zones was incorrectly treated as eligible for someone working those hours from another location.</p><p><strong>Fix:</strong> Separate residence requirements from schedule coverage; use an explicit verification state when geographic eligibility is unclear, with regression tests.</p></div>
-<div class="card"><span class="tag muted">Data integrity</span><h3>Skipped is not the same as rejected</h3><p><strong>Failure:</strong> Ambiguous skip reasons mixed missing remote evidence with genuine disqualifiers, making later review difficult.</p><p><strong>Fix:</strong> Introduce typed skip reasons and preserve historical decisions rather than silently changing prior rankings or application outcomes.</p></div>
-<div class="card"><span class="tag muted">Access / reliability</span><h3>Blocked job sources</h3><p><strong>Failure:</strong> Some job pages returned access restrictions, and automation risked treating blocked postings as expired.</p><p><strong>Fix:</strong> Prefer permitted official public ATS sources, respect robots.txt and 403/429 responses, and distinguish access failures from job expiration.</p></div>
-<div class="card"><span class="tag muted">Document quality</span><h3>PDFs that looked fine but failed checks</h3><p><strong>Failure:</strong> Extracted resume text could split important terms, while a Windows PDF layout tool lacked a required command option.</p><p><strong>Fix:</strong> Add targeted split-token detection and a compatible layout-verification fallback, instead of relying on visual inspection alone.</p></div>
-<div class="card"><span class="tag muted">AI output validation</span><h3>Confident wording without evidence</h3><p><strong>Failure:</strong> Generated application language risked adding unsupported incident details, experience claims, or numerical outcomes.</p><p><strong>Fix:</strong> Strengthen grounding rules and flag unverified metrics for human review. Plausible text is not verified evidence.</p></div>
-<div class="card"><span class="tag muted">Human-in-the-loop</span><h3>Drafted does not mean submitted</h3><p><strong>Failure mode:</strong> Application preparation and actual submission are separate events that must not be conflated.</p><p><strong>Control:</strong> Keep submission manual, preserve tracker states, and resolve ambiguous company matches before recording outcomes.</p></div>
+<div class="card"><span class="tag muted">Classification / logic</span><h3>Conflicting classification rules</h3><p><strong>Failure:</strong> The system treated two related but distinct criteria as interchangeable, producing an overconfident eligibility classification.</p><p><strong>Fix:</strong> Separate independent constraints, define clear decision precedence, and route unresolved cases to an explicit verification state. Add regression tests for ambiguous inputs.</p></div>
+<div class="card"><span class="tag muted">Data integrity</span><h3>Ambiguous states corrupt decisions</h3><p><strong>Failure:</strong> A broad skip category combined missing evidence with genuine disqualifiers, obscuring why records were excluded.</p><p><strong>Fix:</strong> Introduce typed decision reasons and preserve historical state rather than silently rewriting earlier evaluations or outcomes.</p></div>
+<div class="card"><span class="tag muted">Access / reliability</span><h3>Access failures are not missing data</h3><p><strong>Failure:</strong> External sources returned access restrictions, creating a risk that unavailable data would be misclassified as nonexistent.</p><p><strong>Fix:</strong> Use permitted source interfaces, respect access controls and 403/429 responses, and distinguish access failure from an actual absence of data.</p></div>
+<div class="card"><span class="tag muted">Document quality</span><h3>Document validation beyond appearance</h3><p><strong>Failure:</strong> Text extraction split important technical terms, while a Windows layout-verification tool lacked a required command option.</p><p><strong>Fix:</strong> Add targeted token-integrity checks and a compatible layout-verification fallback instead of relying on visual inspection alone.</p></div>
+<div class="card"><span class="tag muted">AI output validation</span><h3>Confident wording without evidence</h3><p><strong>Failure:</strong> AI-generated narratives risked introducing unsupported details, claims, or numerical outcomes.</p><p><strong>Fix:</strong> Strengthen evidence-grounding rules and flag unverified metrics for human review. Plausible output is not verified output.</p></div>
+<div class="card"><span class="tag muted">Human-in-the-loop</span><h3>Separate preparation from execution</h3><p><strong>Failure mode:</strong> A workflow can generate an output without the downstream action actually taking place. Treating both as the same state produces unreliable records.</p><p><strong>Control:</strong> Keep consequential actions behind explicit human confirmation, preserve state transitions, and resolve ambiguous record matches before recording outcomes.</p></div>
 </div>
 </section>
 <section id="skills">
@@ -95,7 +95,7 @@ section{padding:75px 0;border-top:1px solid var(--line)}.section-top{display:fle
 </section>
 <section id="about">
 <div class="section-top"><div><div class="kicker">04 / Background</div><h2>Support experience meets software engineering.</h2></div></div>
-<div class="about"><div><p>My experience spans enterprise SaaS support, backend development, financial technology, healthcare integrations, and government systems. I enjoy the hard cases: reproducing failures, inspecting logs and APIs, isolating the responsible component, and communicating a clear path to resolution.</p><p>I'm applying that foundation to the next generation of support engineering: AI-powered products, developer platforms, agent tooling, and the operational challenges they introduce.</p></div><div class="note">My portfolio distinguishes professional experience from personal experiments. The AI job-search project is an active, AI-assisted build. RAG, MCP, and offline LLM labs are learning projects until implemented and documented. No invented production AI experience.</div></div>
+<div class="about"><div><p>My experience spans enterprise SaaS support, backend development, financial technology, healthcare integrations, and government systems. I enjoy the hard cases: reproducing failures, inspecting logs and APIs, isolating the responsible component, and communicating a clear path to resolution.</p><p>I'm applying that foundation to the next generation of support engineering: AI-powered products, developer platforms, agent tooling, and the operational challenges they introduce.</p></div><div class="note">My portfolio distinguishes professional experience from personal experiments. The AI-assisted research and evaluation system is an active personal build. RAG, MCP, and offline LLM labs remain learning projects until implemented and documented.</div></div>
 </section>
 <section id="contact">
 <div class="contact"><div class="kicker">05 / Connect</div><h2>Let's troubleshoot something difficult.</h2><p>Interested in enterprise support engineering, API integrations, developer tooling, or AI system reliability? I'd welcome the conversation.</p><div class="actions"><a class="button primary" href="mailto:gregory.norwood@icloud.com">Email Gregory ↗</a><a class="button secondary" href="https://github.com/Supernorwood" target="_blank" rel="noopener noreferrer">View GitHub ↗</a></div></div>
