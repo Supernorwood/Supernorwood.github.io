@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a111d">
-<meta name="description" content="Gregory Norwood — enterprise support engineer and Java developer building and debugging AI-assisted workflows, APIs, and automation.">
-<title>Gregory Norwood | Support Engineering, APIs & AI Systems</title>
+<meta name="description" content="Gregory Norwood — software engineer and builder of AI-assisted workflows, APIs, and automation, grounded in enterprise Java and production debugging.">
+<title>Gregory Norwood | Software Engineer, Builder & Systems Thinker</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -56,13 +56,13 @@ section{padding:75px 0;border-top:1px solid var(--line)}.section-top{display:fle
 </div>
 </div>
 <section id="work">
-<div class="section-top"><div><div class="kicker">01 / Selected work</div><h2>Ideas tested in code.</h2></div><p class="intro">Practical projects centered on technical support, automation, and how AI-driven workflows fail in real use.</p></div>
+<div class="section-top"><div><div class="kicker">01 / Selected work</div><h2>Ideas tested in code.</h2></div><p class="intro">Engineering projects exploring intelligent automation, system architecture, and the transformation of complex ideas into reliable, working software.</p></div>
 <div class="feature">
 <div>
 <span class="tag">Active project · AI-assisted engineering</span>
-<h3>AI-assisted research &amp; evaluation pipeline</h3>
-<p>A personal AI-assisted automation project developed with Claude Code and Python. It collects information from multiple public sources, deduplicates records, applies rule-based classifications, evaluates results, and produces structured outputs for human review.</p>
-<p>The engineering work centers on reliability: ambiguous classifications, source-access failures, inconsistent state, document verification, and AI-generated claims that require stronger grounding.</p>
+<h3>AI-Assisted Research &amp; Evaluation Pipeline</h3>
+<p>Built and extended an AI-assisted automation pipeline using Python, Claude Code, and structured evaluation workflows. The system processes information from multiple sources, normalizes and deduplicates records, applies configurable decision rules, and produces prioritized, human-reviewed outputs.</p>
+<p>Engineering work includes state management, classification logic, failure handling, regression testing, data validation, and safeguards against unsupported AI-generated conclusions.</p>
 <a class="button secondary" href="#debugging">Read the debugging cases ↗</a>
 </div>
 <div class="flow"><b>Pipeline overview</b><br>source discovery<br>↓<br>deduplication &amp; state<br>↓<br>rules / evaluation<br>↓<br>human-reviewed output<br><br><span style="color:#a4b7cb">Python · Claude Code · Git · tests</span></div>
@@ -80,7 +80,7 @@ section{padding:75px 0;border-top:1px solid var(--line)}.section-top{display:fle
 <div class="card"><span class="tag muted">Classification / logic</span><h3>Conflicting classification rules</h3><p><strong>Failure:</strong> The system treated two related but distinct criteria as interchangeable, producing an overconfident eligibility classification.</p><p><strong>Fix:</strong> Separate independent constraints, define clear decision precedence, and route unresolved cases to an explicit verification state. Add regression tests for ambiguous inputs.</p></div>
 <div class="card"><span class="tag muted">Data integrity</span><h3>Ambiguous states corrupt decisions</h3><p><strong>Failure:</strong> A broad skip category combined missing evidence with genuine disqualifiers, obscuring why records were excluded.</p><p><strong>Fix:</strong> Introduce typed decision reasons and preserve historical state rather than silently rewriting earlier evaluations or outcomes.</p></div>
 <div class="card"><span class="tag muted">Access / reliability</span><h3>Access failures are not missing data</h3><p><strong>Failure:</strong> External sources returned access restrictions, creating a risk that unavailable data would be misclassified as nonexistent.</p><p><strong>Fix:</strong> Use permitted source interfaces, respect access controls and 403/429 responses, and distinguish access failure from an actual absence of data.</p></div>
-<div class="card"><span class="tag muted">Document quality</span><h3>Document validation beyond appearance</h3><p><strong>Failure:</strong> Text extraction split important technical terms, while a Windows layout-verification tool lacked a required command option.</p><p><strong>Fix:</strong> Add targeted token-integrity checks and a compatible layout-verification fallback instead of relying on visual inspection alone.</p></div>
+<div class="card"><span class="tag muted">Output validation</span><h3>Validation beyond appearance</h3><p><strong>Failure:</strong> Output appeared valid during initial inspection, but automated extraction fragmented technical terms and exposed a platform-specific verification limitation.</p><p><strong>Fix:</strong> Introduced token-integrity checks and a compatible verification fallback to validate the underlying output, not just its appearance.</p></div>
 <div class="card"><span class="tag muted">AI output validation</span><h3>Confident wording without evidence</h3><p><strong>Failure:</strong> AI-generated narratives risked introducing unsupported details, claims, or numerical outcomes.</p><p><strong>Fix:</strong> Strengthen evidence-grounding rules and flag unverified metrics for human review. Plausible output is not verified output.</p></div>
 <div class="card"><span class="tag muted">Human-in-the-loop</span><h3>Separate preparation from execution</h3><p><strong>Failure mode:</strong> A workflow can generate an output without the downstream action actually taking place. Treating both as the same state produces unreliable records.</p><p><strong>Control:</strong> Keep consequential actions behind explicit human confirmation, preserve state transitions, and resolve ambiguous record matches before recording outcomes.</p></div>
 </div>
@@ -95,7 +95,7 @@ section{padding:75px 0;border-top:1px solid var(--line)}.section-top{display:fle
 </section>
 <section id="about">
 <div class="section-top"><div><div class="kicker">04 / Background</div><h2>The discipline behind the work.</h2></div></div>
-<div class="about"><div><p>My experience spans enterprise SaaS support, backend development, financial technology, healthcare integrations, and government systems. I enjoy the hard cases: reproducing failures, inspecting logs and APIs, isolating the responsible component, and communicating a clear path to resolution.</p><p>I'm applying that foundation to the next generation of support engineering: AI-powered products, developer platforms, agent tooling, and the operational challenges they introduce.</p></div><div class="note">My portfolio distinguishes professional experience from personal experiments. The AI-assisted research and evaluation system is an active personal build. RAG, MCP, and offline LLM labs remain learning projects until implemented and documented.</div></div>
+<div class="about"><div><p>My experience spans enterprise SaaS support, backend development, financial technology, healthcare integrations, and government systems. I enjoy the hard cases: reproducing failures, inspecting logs and APIs, isolating the responsible component, and communicating a clear path to resolution.</p><p>I'm extending that foundation into AI-powered systems, intelligent automation, and developer tooling—exploring how emerging technologies can be engineered into practical, scalable solutions.</p></div><div class="note">My portfolio distinguishes professional experience from personal experiments. The AI-assisted research and evaluation system is an active personal build. RAG, MCP, and offline LLM labs remain learning projects until implemented and documented.</div></div>
 </section>
 <section id="contact">
 <div class="contact"><div class="kicker">05 / Connect</div><h2>What's worth building next?</h2><p>I'm interested in ambitious problems, original ideas, and people who value rigorous thinking and disciplined execution. If that sounds like you, get in touch.</p><div class="actions"><a class="button primary" href="mailto:gregory.norwood@icloud.com">Start a conversation ↗</a><a class="button secondary" href="https://github.com/Supernorwood" target="_blank" rel="noopener noreferrer">View GitHub ↗</a></div></div>
